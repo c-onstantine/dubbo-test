@@ -47,4 +47,10 @@ public class OrderServiceImpl implements OrderService {
         userAddressList.forEach(System.out::println);
         return userAddressList;
     }
+
+    public List<UserAddress> initOrder7(String userId) {
+        List<UserAddress> userAddressList = userService.getUserAddressList(userId);
+        userAddressList.forEach(System.out::println);
+        return userAddressList;
+    }
 }
