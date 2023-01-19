@@ -17,8 +17,14 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
     @RequestMapping("/initorder")
-    public List<UserAddress> initOrder(@RequestParam("uid") String uid){
+    public List<UserAddress> initOrder(@RequestParam("uid") String uid) {
         return orderService.initOrder(uid);
+    }
+
+    public void addtest() {
+        orderService.initOrder("1");
+        System.out.println("qiubabi");
     }
 }
