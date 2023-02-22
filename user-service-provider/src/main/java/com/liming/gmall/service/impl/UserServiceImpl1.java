@@ -27,4 +27,11 @@ public class UserServiceImpl1 implements UserService {
 		return Arrays.asList(address1,address2);
 	}
 
+	@Override
+	public boolean ValidToken(String token) {
+		if (token.equals("1")) {
+			return true;
+		}
+		return false;
+	}
 }

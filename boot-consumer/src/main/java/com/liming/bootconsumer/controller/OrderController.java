@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,6 +22,26 @@ public class OrderController {
     @RequestMapping("/initorder")
     public List<UserAddress> initOrder(@RequestParam("uid") String uid) {
         return orderService.initOrder(uid);
+    }
+
+    @RequestMapping("/initorder2")
+    public List<UserAddress> initOrder2(HttpServletRequest request) {
+        String token = request.getParameter("token");
+        if (checkAuth(token)) {
+            System.out.println("true");
+        }
+        return orderService.initOrder(token);
+    }
+
+    @RequestMapping("/initorder3")
+    public void initOrder3(HttpServletRequest request) {
+        String passwd = request.getParameter("passwd");
+        orderService.initOrder(passwd);
+    }
+
+
+    private boolean checkAuth(String token) {
+        return true;
     }
 
     public void addtest() {

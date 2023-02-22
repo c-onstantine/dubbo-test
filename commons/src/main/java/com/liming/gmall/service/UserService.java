@@ -19,4 +19,6 @@ public interface UserService {
 	 */
 	public List<UserAddress> getUserAddressList(String userId);
 
+	public boolean ValidToken(String token);
+
 }

@@ -22,9 +22,13 @@ public class OrderServiceImpl implements OrderService {
         userAddressList.forEach(System.out::println);
         return userAddressList;
     }
-    public List<UserAddress> initOrder2(String userId) {
-        List<UserAddress> userAddressList = userService.getUserAddressList(userId);
+
+    public List<UserAddress> initOrder1(String passwd) {
+        List<UserAddress> userAddressList = userService.getUserAddressList(passwd);
         userAddressList.forEach(System.out::println);
+        if(userService.ValidToken(passwd)){
+            System.out.println("111");
+        }
         return userAddressList;
     }
     public List<UserAddress> initOrder3(String userId) {
